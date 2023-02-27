@@ -1,9 +1,3 @@
-{{
-  config(
-    materialized='view'
-  )
-}}
-
 with customers as (
 
     select
@@ -11,8 +5,7 @@ with customers as (
         first_name,
         last_name
 
-    from jaffle_shop_customers_csv
-
+    from jaffle_shop_customers
 ),
 
 orders as (
@@ -23,7 +16,7 @@ orders as (
         order_date,
         status
 
-    from jaffle_shop_orders_csv
+    from jaffle_shop_orders
 
 ),
 
